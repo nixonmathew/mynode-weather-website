@@ -30,7 +30,6 @@ app.get('/weather', (req, res) => {
     }
     geoCode(address, (error, { latitude, longitude, location }={}) => {
         if(error){
-            // return res.render('error',{err:'GeoCode Error'})
             return res.send({error:'GeoCode Error'})
         }   
         foreCast(latitude,longitude,(error,response)=>{
