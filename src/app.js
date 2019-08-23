@@ -5,6 +5,7 @@ const geoCode = require('./utils/geocode')
 const foreCast = require('./utils/forecast')
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const indexPath = path.join(__dirname, '../assets')
 const viewPath = path.join(__dirname, '../templates/views')
@@ -49,6 +50,6 @@ app.get('/weather/*', (req, res) => {
 app.get('*', (req, res) => {
     res.send('My 404')
 })
-app.listen(3000, () => {
-    console.log('Serer running on port 3k')
+app.listen(port, () => {
+    console.log('Serer running on port '+ port)
 })
